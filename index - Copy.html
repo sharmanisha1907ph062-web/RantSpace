@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- This line makes the page fit properly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RantSpace</title>
+
+  <!-- Connects our CSS file (the styling) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- ============ SCREEN 1: HOME ============ -->
+    <section id="screen-home" class="screen screen-home active">
+      <div class="orb" aria-hidden="true"></div>
+
+      <h1 tabindex="-1" class="brand">RantSpace</h1>
+      <p class="tagline">You don't have to carry it alone.</p>
+      <p class="lead">
+        A quiet place to get everything off your chest. Write out what's
+        weighing on you, then choose how you'd like to be met: listened to,
+        helped to understand, or helped to move forward.
+      </p>
+
+      <button id="start-btn" class="btn btn-primary" type="button">
+        Start unloading
+      </button>
+      <p class="note">No account required.</p>
+    </section>
+
+    <!-- ============ SCREEN 2: RANT ============ -->
+    <section id="screen-rant" class="screen">
+      <h2 tabindex="-1">What's on your mind?</h2>
+      <p class="lead">
+        You don't have to make sense. You don't have to sound reasonable.
+        Just let it out.
+      </p>
+
+      <label for="rant-input" class="visually-hidden">Your rant</label>
+      <textarea
+        id="rant-input"
+        placeholder="Tell me everything..."
+        autocomplete="off"
+        spellcheck="true"
+      ></textarea>
+
+      <!-- Shown only if the person clicks Continue with an empty box -->
+      <p id="rant-error" class="error" role="alert" hidden>
+        Write a little something first. Even a few words is enough.
+      </p>
+
+      <div class="btn-row">
+        <button id="rant-back-btn" class="btn btn-secondary" type="button">Back</button>
+        <button id="continue-btn" class="btn btn-primary" type="button">Continue</button>
+      </div>
+
+      <p class="note">🔒 Private-feeling session</p>
+    </section>
+
+    <!-- ============ SCREEN 3: CHOOSE WHAT YOU NEED ============ -->
+    <section id="screen-choose" class="screen">
+      <h2 tabindex="-1">What do you need right now?</h2>
+      <p class="lead">Pick whatever feels closest. You can come back and try another.</p>
+
+      <!-- data-choice tells our JavaScript which option was clicked -->
+      <div class="options">
+        <button class="option" type="button" data-choice="listen">
+          <span class="option-emoji" aria-hidden="true">🫂</span>
+          <span class="option-text">
+            <span class="option-title">Just Listen</span>
+            <span class="option-desc">No advice. Just space to be heard.</span>
+          </span>
+        </button>
+
+        <button class="option" type="button" data-choice="understand">
+          <span class="option-emoji" aria-hidden="true">🧠</span>
+          <span class="option-text">
+            <span class="option-title">Help Me Understand</span>
+            <span class="option-desc">Make sense of what you're feeling.</span>
+          </span>
+        </button>
+
+        <button class="option" type="button" data-choice="figure">
+          <span class="option-emoji" aria-hidden="true">💡</span>
+          <span class="option-text">
+            <span class="option-title">Help Me Figure It Out</span>
+            <span class="option-desc">Look at options and possible next steps.</span>
+          </span>
+        </button>
+
+        <button class="option" type="button" data-choice="words">
+          <span class="option-emoji" aria-hidden="true">✍️</span>
+          <span class="option-text">
+            <span class="option-title">Put It Into Words</span>
+            <span class="option-desc">Turn it into something you can say or write.</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="btn-row">
+        <button id="choose-back-btn" class="btn btn-secondary" type="button">Back</button>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 4: RESPONSE ============ -->
+    <section id="screen-response" class="screen">
+      <div class="response-card">
+        <!-- Title and text below are filled in by script.js -->
+        <h2 id="response-title" tabindex="-1"></h2>
+        <p id="response-text"></p>
+        <p class="placeholder-tag">
+          Your response will appear here.
+        </p>
+      </div>
+
+      <div class="btn-row">
+        <button id="response-back-btn" class="btn btn-secondary" type="button">Back</button>
+        <button id="end-btn" class="btn btn-primary" type="button">End Session</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Connects our JavaScript file (the behaviour) -->
+  <script src="script.js"></script>
+</body>
+</html>

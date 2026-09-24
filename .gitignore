@@ -1,0 +1,2 @@
+# Local environment variables and secrets. Never commit this file.
+.env
