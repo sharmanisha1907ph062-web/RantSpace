@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 fastapi
 uvicorn
 python-dotenv
+=======
+fastapi
+uvicorn
+python-dotenv
+>>>>>>> master
 groq
